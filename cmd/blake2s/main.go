@@ -5,7 +5,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/gtank/blake2s"
+	"github.com/gtank/blake2/blake2s"
 )
 
 func main() {
