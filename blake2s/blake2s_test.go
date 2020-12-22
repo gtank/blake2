@@ -44,13 +44,15 @@ func TestNewDigest(t *testing.T) {
 	digest32.Write(emptyBuf[:16])
 	_ = digest32.Sum(nil)
 
-	digest16, err := NewDigest(nil, nil, nil, 16)
-	if err != nil {
-		t.Fatal(err)
-	}
+	for i := 1; i < 32; i++ {
+		digest16, err := NewDigest(nil, nil, nil, i)
+		if err != nil {
+			t.Fatal(err)
+		}
 
-	digest16.Write(emptyBuf[:16])
-	_ = digest16.Sum(nil)
+		digest16.Write(emptyBuf[:16])
+		_ = digest16.Sum(nil)
+	}
 }
 
 // These come from the BLAKE2s reference implementation.
@@ -60,6 +62,7 @@ type ReferenceTestVector struct {
 	Key     string `json:"key"`
 	Persona string `json:"persona,omitempty"`
 	Salt    string `json:"salt,omitempty"`
+	Length  int    `json:"length,omitempty"` // Added by this impl to catch short output regression
 	Output  string `json:"out"`
 }
 
@@ -300,7 +303,14 @@ func TestExtrasVectors(t *testing.T) {
 		}
 		decodedOutput, _ := hex.DecodeString(test.Output)
 
-		d, err := NewDigest(decodedKey, decodedSalt, decodedPersona, 32)
+		var d *Digest
+
+		if test.Length != 0 {
+			d, err = NewDigest(decodedKey, decodedSalt, decodedPersona, test.Length)
+		} else {
+			d, err = NewDigest(decodedKey, decodedSalt, decodedPersona, 32)
+		}
+
 		if err != nil {
 			t.Error(err)
 			continue
@@ -310,8 +320,9 @@ func TestExtrasVectors(t *testing.T) {
 			d.Write(decodedInput)
 		}
 
-		if !bytes.Equal(decodedOutput, d.Sum(nil)) {
-			t.Errorf("Failed test: %v", test.Output)
+		result := d.Sum(nil)
+		if !bytes.Equal(decodedOutput, result) {
+			t.Errorf("Failed test (length %d): want %s got %x", test.Length, test.Output, result)
 			break
 		}
 	}

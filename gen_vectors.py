@@ -33,7 +33,22 @@ def write_blake2s_tests(output_fn):
                 "salt": "",
                 "out": blake2s(key=key_bytes, person=persona_bytes).hexdigest()
                }
-        fd.write(json.dumps(test, indent=True)+(',' if i<7 else '')+'\n')
+        fd.write(json.dumps(test, indent=True)+',\n')
+
+    for i in range(32):
+        salt_bytes = bytearray(range(8))
+        persona_bytes = bytearray(range(8))
+        length = i+1
+        test = {
+                "hash": "blake2s",
+                "in": "",
+                "key": "",
+                "persona": "",
+                "salt": "",
+                "length": length,
+                "out": blake2s(digest_size=length).hexdigest(),
+               }
+        fd.write(json.dumps(test, indent=True)+(',' if i<31 else '')+'\n')
 
     fd.write(']')
     fd.close()
