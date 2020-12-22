@@ -333,15 +333,14 @@ func (d *Digest) finalize(out []byte) error {
 
 	dCopy.compress()
 
-	// extract output
-	putU64LE(out[0*8:], dCopy.h[0])
-	putU64LE(out[1*8:], dCopy.h[1])
-	putU64LE(out[2*8:], dCopy.h[2])
-	putU64LE(out[3*8:], dCopy.h[3])
-	putU64LE(out[4*8:], dCopy.h[4])
-	putU64LE(out[5*8:], dCopy.h[5])
-	putU64LE(out[6*8:], dCopy.h[6])
-	putU64LE(out[7*8:], dCopy.h[7])
+	var shift uint
+	var mask uint64
+
+	for offset := 0; offset < len(out); offset++ {
+		shift = 8 * (uint(offset) % 8)
+		mask = uint64(0xFF << shift)
+		out[offset] = byte((dCopy.h[offset/8] & mask) >> shift)
+	}
 
 	return nil
 }
