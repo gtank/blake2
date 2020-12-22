@@ -36,10 +36,21 @@ func TestParameterBlockInit(t *testing.T) {
 }
 
 func TestNewDigest(t *testing.T) {
-	_, err := NewDigest(nil, nil, nil, 32)
+	digest32, err := NewDigest(nil, nil, nil, 32)
 	if err != nil {
 		t.Fatal(err)
 	}
+
+	digest32.Write(emptyBuf[:16])
+	_ = digest32.Sum(nil)
+
+	digest16, err := NewDigest(nil, nil, nil, 16)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	digest16.Write(emptyBuf[:16])
+	_ = digest16.Sum(nil)
 }
 
 // These come from the BLAKE2s reference implementation.
