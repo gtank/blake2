@@ -50,6 +50,7 @@ type ReferenceTestVector struct {
 	Key     string `json:"key"`
 	Persona string `json:"persona,omitempty"`
 	Salt    string `json:"salt,omitempty"`
+	Length  int    `json:"length,omitempty"`
 	Output  string `json:"out"`
 }
 
@@ -125,7 +126,13 @@ func TestExtrasVectors(t *testing.T) {
 		}
 		decodedOutput, _ := hex.DecodeString(test.Output)
 
-		d, err := NewDigest(decodedKey, decodedSalt, decodedPersona, 64)
+		var d *Digest
+
+		if test.Length != 0 {
+			d, err = NewDigest(decodedKey, decodedSalt, decodedPersona, test.Length)
+		} else {
+			d, err = NewDigest(decodedKey, decodedSalt, decodedPersona, 64)
+		}
 		if err != nil {
 			t.Error(err)
 			continue

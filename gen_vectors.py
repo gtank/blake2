@@ -33,7 +33,20 @@ def write_blake2s_tests(output_fn):
                 "salt": "",
                 "out": blake2s(key=key_bytes, person=persona_bytes).hexdigest()
                }
-        fd.write(json.dumps(test, indent=True)+(',' if i<7 else '')+'\n')
+        fd.write(json.dumps(test, indent=True)+',\n')
+
+    for i in range(32):
+        length = i+1
+        test = {
+                "hash": "blake2s",
+                "in": "",
+                "key": "",
+                "persona": "",
+                "salt": "",
+                "length": length,
+                "out": blake2s(digest_size=length).hexdigest(),
+               }
+        fd.write(json.dumps(test, indent=True)+(',' if i<31 else '')+'\n')
 
     fd.write(']')
     fd.close()
@@ -66,9 +79,22 @@ def write_blake2b_tests(output_fn):
                 "salt": "",
                 "out": blake2b(key=key_bytes, person=persona_bytes).hexdigest()
                }
-        fd.write(json.dumps(test, indent=True)+(',' if i<7 else '')+'\n')
+        fd.write(json.dumps(test, indent=True)+',\n')
 
-    fd.write(']')
+    for i in range(64):
+        length = i+1
+        test = {
+                "hash": "blake2b",
+                "in": "",
+                "key": "",
+                "persona": "",
+                "salt": "",
+                "length": length,
+                "out": blake2b(digest_size=length).hexdigest(),
+               }
+        fd.write(json.dumps(test, indent=True)+(',' if i<63 else '')+'\n')
+
+    fd.write(']\n')
     fd.close()
 
 if __name__ == "__main__":

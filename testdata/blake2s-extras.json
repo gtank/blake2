@@ -126,5 +126,293 @@
  "persona": "0001020304050607",
  "salt": "",
  "out": "e397cdd76bc45ef9d3d36ca2db13a6631b12c05909bbdf73ebb1761ee0944821"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 1,
+ "out": "a1"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 2,
+ "out": "8f38"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 3,
+ "out": "ad25c7"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 4,
+ "out": "36e9d246"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 5,
+ "out": "0c58705f4f"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 6,
+ "out": "ef6e31b489af"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 7,
+ "out": "de1931c0881609"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 8,
+ "out": "ef2a8b78dd80da9c"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 9,
+ "out": "ab1d1d2e423e803924"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 10,
+ "out": "1bf21a98c78a1c376ae9"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 11,
+ "out": "567004bf96e4a25773ebf4"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 12,
+ "out": "a10486e873ac3dcef45bbba2"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 13,
+ "out": "758fe2c70fa22afd145e08c8c1"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 14,
+ "out": "80b1192a5cd72ee97b703b91616b"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 15,
+ "out": "89d14662cd5728a3b60c6240c99a62"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 16,
+ "out": "64550d6ffe2c0a01a14aba1eade0200c"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 17,
+ "out": "20ec13a2883f05fd6507dbfd3874db7cba"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 18,
+ "out": "81ac86b9e6a116711f1424875720a2121378"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 19,
+ "out": "d2e2d7deca16f2f6b2960de81ac5547fad2c7f"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 20,
+ "out": "354c9c33f735962418bdacb9479873429c34916f"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 21,
+ "out": "dc2ea42df9976a83adfbf854f30051b68e7115a753"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 22,
+ "out": "c3296897bb43ce9211a9121cf1767b34b8d9349fb06b"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 23,
+ "out": "c3aa6d758b7019fdea61f4fad3a4338bf378b2d32bff7c"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 24,
+ "out": "a847d26c2f966c5c4cc222b174918a56037cdee34b3f872f"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 25,
+ "out": "8ac6416804b719c221366263abdda861ec19ebb2f8f75dd4ea"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 26,
+ "out": "e90af5ca5d02f36adec62d0588ab5dc21c81e91cde3e6cd36aad"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 27,
+ "out": "dae10354a41d7b16066966d565e4d063ef5a9de5ac4f9583ed4961"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 28,
+ "out": "1fa1291e65248b37b3433475b2a0dd63d54a11ecc4e3e034e7bc1ef4"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 29,
+ "out": "9965fe1085a8d2294d96b40a6494ea1b8367551d69ea07188b2598967e"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 30,
+ "out": "526f4a3a959bd5d1665241f94c619dbb367250c3bdcfeb3b29737b6ea44d"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 31,
+ "out": "1f57c56334f1ba2d62275430fdc2d2301017ba6be19864dac5a5eca012da4d"
+},
+{
+ "hash": "blake2s",
+ "in": "",
+ "key": "",
+ "persona": "",
+ "salt": "",
+ "length": 32,
+ "out": "69217a3079908094e11121d042354a7c1f55b6482ca1a51e1b250dfd1ed0eef9"
 }
 ]
