@@ -333,14 +333,15 @@ func (d *Digest) finalize(out []byte) error {
 
 	dCopy.compress()
 
-	var shift uint
-	var mask uint64
-
-	for offset := 0; offset < len(out); offset++ {
-		shift = 8 * (uint(offset) % 8)
-		mask = uint64(0xFF << shift)
-		out[offset] = byte((dCopy.h[offset/8] & mask) >> shift)
-	}
+	// extract output
+	putU64LE(out[0*8:], dCopy.h[0])
+	putU64LE(out[1*8:], dCopy.h[1])
+	putU64LE(out[2*8:], dCopy.h[2])
+	putU64LE(out[3*8:], dCopy.h[3])
+	putU64LE(out[4*8:], dCopy.h[4])
+	putU64LE(out[5*8:], dCopy.h[5])
+	putU64LE(out[6*8:], dCopy.h[6])
+	putU64LE(out[7*8:], dCopy.h[7])
 
 	return nil
 }
@@ -442,7 +443,7 @@ func (d *Digest) Write(input []byte) (n int, err error) {
 // It does not change the underlying hash state.
 func (d *Digest) Sum(b []byte) (out []byte) {
 	// if there's space, reuse the b slice
-	if n := len(b) + d.size; cap(b) >= n {
+	if n := len(b) + 64; cap(b) >= n {
 		out = b[:n]
 	} else {
 		out = make([]byte, n)
@@ -455,7 +456,7 @@ func (d *Digest) Sum(b []byte) (out []byte) {
 		return out[:len(b)]
 	}
 
-	return out
+	return out[:len(b)+d.size]
 }
 
 // Reset resets the Hash to its initial state.
